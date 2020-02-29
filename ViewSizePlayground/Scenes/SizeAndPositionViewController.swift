@@ -25,6 +25,9 @@ class SizeAndPositionViewController: UIViewController {
     @IBOutlet weak var frameWidth: SliderWithLabel!
     @IBOutlet weak var frameHeight: SliderWithLabel!
     
+    @IBOutlet weak var centerX: SliderWithLabel!
+    @IBOutlet weak var centerY: SliderWithLabel!
+    
     @IBOutlet weak var rotation: SliderWithLabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,6 +111,18 @@ class SizeAndPositionViewController: UIViewController {
             
             self.updateLabels()
         }
+        
+        centerX.callback = { [weak self] slider in
+            guard let self = self else { return }
+            self.testView.center.x = CGFloat(slider.value)
+            self.updateLabels()
+        }
+        
+        centerY.callback = { [weak self] slider in
+            guard let self = self else { return }
+            self.testView.center.y = CGFloat(slider.value)
+            self.updateLabels()
+        }
     }
     
     private func setSliderMaxValues() {
@@ -121,6 +136,8 @@ class SizeAndPositionViewController: UIViewController {
         frameWidth.sliderView.maximumValue = Float(view.frame.width)
         frameHeight.sliderView.maximumValue = Float(view.frame.height)
         
+        centerY.sliderView.maximumValue = Float(view.frame.maxY)
+        centerX.sliderView.maximumValue = Float(view.frame.maxX)
         rotation.sliderView.maximumValue = Float.pi
     }
     
@@ -135,7 +152,9 @@ class SizeAndPositionViewController: UIViewController {
         frameWidth.labelView.text = "frame width = \(Int(testView.frame.width))"
         frameHeight.labelView.text = "frame height = \(Int(testView.frame.height))"
         
-        rotation.labelView.text = "rotation = \(rotation.sliderView.value)"
+        centerY.labelView.text = "center Y = \(Int(testView.center.y))"
+        centerX.labelView.text = "center X = \(Int(testView.center.x))"
+        rotation.labelView.text = "rotation = \(atan2(testView.transform.b, testView.transform.a))"
         
         updateSliderCurrentValues()
     }
@@ -151,6 +170,8 @@ class SizeAndPositionViewController: UIViewController {
         frameWidth.sliderView.value = Float(testView.frame.size.width)
         frameHeight.sliderView.value = Float(testView.frame.size.height)
         
+        centerY.sliderView.value = Float(testView.center.y)
+        centerX.sliderView.value = Float(testView.center.x)
         rotation.sliderView.value = Float(atan2(testView.transform.b, testView.transform.a))
     }
 }
