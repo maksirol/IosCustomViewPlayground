@@ -13,9 +13,9 @@
 		86417EFE24097743006645F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86417EFC24097743006645F7 /* Main.storyboard */; };
 		86417F0024097745006645F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86417EFF24097745006645F7 /* Assets.xcassets */; };
 		86417F0324097745006645F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86417F0124097745006645F7 /* LaunchScreen.storyboard */; };
-		86417F0C240977FF006645F7 /* FrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86417F0B240977FF006645F7 /* FrameViewController.swift */; };
 		86417F13240982CD006645F7 /* SliderWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86417F12240982CD006645F7 /* SliderWithLabel.xib */; };
 		86417F15240983BE006645F7 /* SliderWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86417F14240983BE006645F7 /* SliderWithLabel.swift */; };
+		86417F19240A6CAA006645F7 /* SizeAndPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86417F18240A6CAA006645F7 /* SizeAndPositionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +27,9 @@
 		86417EFF24097745006645F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86417F0224097745006645F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86417F0424097745006645F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86417F0B240977FF006645F7 /* FrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameViewController.swift; sourceTree = "<group>"; };
 		86417F12240982CD006645F7 /* SliderWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderWithLabel.xib; sourceTree = "<group>"; };
 		86417F14240983BE006645F7 /* SliderWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderWithLabel.swift; sourceTree = "<group>"; };
+		86417F18240A6CAA006645F7 /* SizeAndPositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeAndPositionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +77,8 @@
 		86417F0A240977A1006645F7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				86417F18240A6CAA006645F7 /* SizeAndPositionViewController.swift */,
 				86417F0F24098299006645F7 /* CustomView */,
-				86417F0B240977FF006645F7 /* FrameViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -167,8 +167,8 @@
 				86417EFB24097743006645F7 /* ViewController.swift in Sources */,
 				86417EF724097743006645F7 /* AppDelegate.swift in Sources */,
 				86417F15240983BE006645F7 /* SliderWithLabel.swift in Sources */,
-				86417F0C240977FF006645F7 /* FrameViewController.swift in Sources */,
 				86417EF924097743006645F7 /* SceneDelegate.swift in Sources */,
+				86417F19240A6CAA006645F7 /* SizeAndPositionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
