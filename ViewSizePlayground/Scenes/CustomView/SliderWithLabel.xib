@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SliderWithLabel" customModule="ViewSizePlayground" customModuleProvider="target">
+            <connections>
+                <outlet property="labelView" destination="VSN-PY-o89" id="aXX-jO-Tfn"/>
+                <outlet property="sliderView" destination="q1H-0F-TCh" id="pKO-SC-MTd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="q1H-0F-TCh">
+                    <rect key="frame" x="3" y="5" width="303" height="81"/>
+                    <connections>
+                        <action selector="onChange:" destination="-1" eventType="valueChanged" id="0VP-Bi-coP"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSN-PY-o89">
+                    <rect key="frame" x="309" y="5" width="100" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="cFs-Ge-aoO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="q1H-0F-TCh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="0cX-Ma-Rsm"/>
+                <constraint firstItem="q1H-0F-TCh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="3S8-IX-T4t"/>
+                <constraint firstItem="VSN-PY-o89" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="8Ai-OJ-pOn"/>
+                <constraint firstAttribute="trailing" secondItem="VSN-PY-o89" secondAttribute="trailing" constant="5" id="JVo-ST-zhj"/>
+                <constraint firstItem="VSN-PY-o89" firstAttribute="leading" secondItem="q1H-0F-TCh" secondAttribute="trailing" constant="5" id="jFs-zV-02b"/>
+                <constraint firstAttribute="bottom" secondItem="VSN-PY-o89" secondAttribute="bottom" constant="5" id="rkp-pc-uOK"/>
+                <constraint firstAttribute="bottom" secondItem="q1H-0F-TCh" secondAttribute="bottom" constant="5" id="vdM-oT-wze"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="153.62318840579712" y="-38.169642857142854"/>
+        </view>
+    </objects>
+</document>
