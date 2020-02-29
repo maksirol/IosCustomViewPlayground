@@ -47,7 +47,8 @@ class SizeAndPositionViewController: UIViewController {
         testView.transform = CGAffineTransform.identity
         testView.frame = CGRect(origin: CGPoint(x: 100, y: 100), size: CGSize(width: 120, height: 120))
         
-        setSliderValues()
+        setSliderMaxValues()
+        updateSliderCurrentValues()
         updateLabels()
     }
     
@@ -109,29 +110,18 @@ class SizeAndPositionViewController: UIViewController {
         }
     }
     
-    private func setSliderValues() {
+    private func setSliderMaxValues() {
         boundsX.sliderView.maximumValue = Float(view.bounds.maxX)
         boundsY.sliderView.maximumValue = Float(view.bounds.maxY)
         boundsWidth.sliderView.maximumValue = Float(view.bounds.width)
         boundsHeight.sliderView.maximumValue = Float(view.bounds.height)
-        
-        boundsX.sliderView.value = Float(testView.bounds.origin.x)
-        boundsY.sliderView.value = Float(testView.bounds.origin.y)
-        boundsWidth.sliderView.value = Float(testView.bounds.size.width)
-        boundsHeight.sliderView.value = Float(testView.bounds.size.height)
         
         frameX.sliderView.maximumValue = Float(view.frame.maxX)
         frameY.sliderView.maximumValue = Float(view.frame.maxY)
         frameWidth.sliderView.maximumValue = Float(view.frame.width)
         frameHeight.sliderView.maximumValue = Float(view.frame.height)
         
-        frameX.sliderView.value = Float(testView.frame.origin.x)
-        frameY.sliderView.value = Float(testView.frame.origin.y)
-        frameWidth.sliderView.value = Float(testView.frame.size.width)
-        frameHeight.sliderView.value = Float(testView.frame.size.height)
-        
-        rotation.sliderView.maximumValue = Float.pi * 2
-        rotation.sliderView.value = 0
+        rotation.sliderView.maximumValue = Float.pi
     }
     
     private func updateLabels() {
@@ -146,5 +136,21 @@ class SizeAndPositionViewController: UIViewController {
         frameHeight.labelView.text = "frame height = \(Int(testView.frame.height))"
         
         rotation.labelView.text = "rotation = \(rotation.sliderView.value)"
+        
+        updateSliderCurrentValues()
+    }
+    
+    private func updateSliderCurrentValues() {
+        boundsX.sliderView.value = Float(testView.bounds.origin.x)
+        boundsY.sliderView.value = Float(testView.bounds.origin.y)
+        boundsWidth.sliderView.value = Float(testView.bounds.size.width)
+        boundsHeight.sliderView.value = Float(testView.bounds.size.height)
+        
+        frameX.sliderView.value = Float(testView.frame.origin.x)
+        frameY.sliderView.value = Float(testView.frame.origin.y)
+        frameWidth.sliderView.value = Float(testView.frame.size.width)
+        frameHeight.sliderView.value = Float(testView.frame.size.height)
+        
+        rotation.sliderView.value = Float(atan2(testView.transform.b, testView.transform.a))
     }
 }
